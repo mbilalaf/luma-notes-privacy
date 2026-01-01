@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Luma Notes</title>
+    <meta name="description" content="Privacy Policy for Luma Notes - A private, offline notes app">
     <style>
         :root {
             --bg: #ffffff;
@@ -11,6 +12,7 @@
             --accent: #6366f1;
             --muted: #6b7280;
             --border: #e5e7eb;
+            --card-bg: #f9fafb;
         }
         
         @media (prefers-color-scheme: dark) {
@@ -20,6 +22,7 @@
                 --accent: #818cf8;
                 --muted: #9ca3af;
                 --border: #374151;
+                --card-bg: #1f2937;
             }
         }
         
@@ -33,49 +36,73 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.7;
+            line-height: 1.8;
             padding: 2rem;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
             color: var(--accent);
         }
         
+        .subtitle {
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+        
+        .last-updated {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
         h2 {
-            font-size: 1.4rem;
-            margin-top: 2rem;
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         h3 {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
         }
         
         p {
             margin-bottom: 1rem;
         }
         
-        .last-updated {
-            color: var(--muted);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
+        .summary-box {
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
         }
         
-        .summary {
-            background: var(--accent);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            font-weight: 500;
+        .summary-box strong {
+            display: block;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
         }
         
         ul, ol {
@@ -90,17 +117,33 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
         }
         
         th, td {
-            padding: 0.75rem;
+            padding: 1rem;
             text-align: left;
             border: 1px solid var(--border);
         }
         
         th {
-            background: var(--border);
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background: var(--card-bg);
+        }
+        
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
         }
         
         .no-list {
@@ -109,14 +152,51 @@
         }
         
         .no-list li {
-            padding-left: 0;
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
         }
         
-        .contact {
-            background: var(--border);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
+        .no-list li::before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+        }
+        
+        .yes-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .yes-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .yes-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .contact-box {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .contact-box a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-box a:hover {
+            text-decoration: underline;
         }
         
         a {
@@ -124,123 +204,307 @@
         }
         
         footer {
-            margin-top: 3rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border);
             color: var(--muted);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             text-align: center;
         }
         
-        .icon {
-            font-size: 1.2rem;
-            margin-right: 0.5rem;
+        .toc {
+            background: var(--card-bg);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .toc ol {
+            margin-bottom: 0;
+        }
+        
+        .toc a {
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        .effective-date {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <h1>🔒 Privacy Policy</h1>
-    <p class="last-updated">Last Updated: July 2025</p>
+    <header>
+        <h1>🔒 Privacy Policy</h1>
+        <p class="subtitle">Luma Notes - Your Private Notepad</p>
+        <p class="last-updated">Last Updated: <strong>July 14, 2025</strong></p>
+        <span class="effective-date">Effective Immediately</span>
+    </header>
     
-    <h2>Introduction</h2>
-    <p>Luma Notes ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use our mobile application.</p>
-    
-    <div class="summary">
-        ✨ <strong>Luma Notes does not collect, store, or transmit any of your personal data.</strong> All your notes, settings, and files remain exclusively on your device.
+    <div class="toc">
+        <h3>📑 Table of Contents</h3>
+        <ol>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#information-collection">Information Collection</a></li>
+            <li><a href="#data-storage">Data Storage</a></li>
+            <li><a href="#permissions">App Permissions</a></li>
+            <li><a href="#data-sharing">Data Sharing</a></li>
+            <li><a href="#data-security">Data Security</a></li>
+            <li><a href="#data-retention">Data Retention & Deletion</a></li>
+            <li><a href="#children">Children's Privacy</a></li>
+            <li><a href="#your-rights">Your Rights</a></li>
+            <li><a href="#international">International Users</a></li>
+            <li><a href="#changes">Changes to This Policy</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ol>
     </div>
     
-    <h2>📱 Data Storage</h2>
+    <div class="summary-box">
+        <strong>🛡️ Our Privacy Promise</strong>
+        Luma Notes does not collect, store, or transmit any of your personal data. 
+        All your notes and files remain 100% on your device. We have zero access to your information.
+    </div>
     
-    <h3>Local Storage Only</h3>
-    <ul>
-        <li>All notes, folders, and settings are stored locally on your device</li>
-        <li>We have no servers and no cloud infrastructure</li>
-        <li>We cannot access, read, or recover your data</li>
+    <h2 id="introduction">1. Introduction</h2>
+    <p>Welcome to Luma Notes ("we," "our," "us," or "the app"). We are committed to protecting your privacy and being transparent about our practices.</p>
+    <p>This Privacy Policy explains how Luma Notes handles information when you use our mobile application available on Android devices through the Google Play Store.</p>
+    <p>By using Luma Notes, you agree to the practices described in this Privacy Policy.</p>
+    
+    <h2 id="information-collection">2. Information Collection</h2>
+    
+    <h3>Information We Do NOT Collect</h3>
+    <p>Luma Notes is designed as a fully offline, privacy-first application. We do not collect:</p>
+    <ul class="no-list">
+        <li>Personal identification information (name, email, phone number)</li>
+        <li>Device identifiers or advertising IDs</li>
+        <li>Location data</li>
+        <li>Usage analytics or statistics</li>
+        <li>Crash reports or diagnostics</li>
+        <li>Contact lists or calendar data</li>
+        <li>Browsing history</li>
+        <li>Any content you create in the app</li>
     </ul>
     
-    <h3>What's Stored on Your Device</h3>
-    <ul>
-        <li>Notes (text, formatting, embedded images)</li>
-        <li>Audio recordings attached to notes</li>
-        <li>Folders and organization structure</li>
-        <li>App settings and preferences</li>
-        <li>Hidden vault PIN (encrypted)</li>
+    <h3>Information Stored Locally on Your Device</h3>
+    <p>The following data is stored <strong>only on your device</strong> and is never transmitted to us or any third party:</p>
+    <ul class="yes-list">
+        <li>Notes you create (text, formatting, styles)</li>
+        <li>Images you attach to notes</li>
+        <li>Audio recordings you make within the app</li>
+        <li>Folders and organizational structure</li>
+        <li>App preferences and settings</li>
+        <li>Hidden vault PIN (stored encrypted)</li>
+        <li>Backup files you create</li>
     </ul>
     
-    <h2>🔐 Permissions</h2>
-    <p>Luma Notes requests the following permissions:</p>
+    <h2 id="data-storage">3. Data Storage</h2>
+    
+    <div class="card">
+        <h3>🏠 100% Local Storage</h3>
+        <p>All data created in Luma Notes is stored exclusively on your device's local storage. We operate with:</p>
+        <ul>
+            <li><strong>No cloud servers</strong> - We don't have servers to store your data</li>
+            <li><strong>No remote databases</strong> - Your notes never leave your device</li>
+            <li><strong>No sync services</strong> - Data stays only where you put it</li>
+            <li><strong>No network requests</strong> - The app works completely offline</li>
+        </ul>
+    </div>
+    
+    <h3>Storage Location</h3>
+    <p>Your data is stored in the app's private storage area on your Android device. This area is:</p>
+    <ul>
+        <li>Protected by Android's app sandboxing</li>
+        <li>Inaccessible to other apps</li>
+        <li>Automatically deleted when you uninstall the app</li>
+    </ul>
+    
+    <h2 id="permissions">4. App Permissions</h2>
+    <p>Luma Notes requests only the minimum permissions necessary for functionality:</p>
     
     <table>
         <tr>
             <th>Permission</th>
             <th>Purpose</th>
+            <th>When Used</th>
         </tr>
         <tr>
-            <td><strong>Storage</strong></td>
-            <td>To save and attach images to your notes</td>
+            <td><strong>Camera/Storage</strong></td>
+            <td>To attach photos to your notes</td>
+            <td>Only when you choose to add an image</td>
         </tr>
         <tr>
             <td><strong>Microphone</strong></td>
-            <td>To record voice memos within notes</td>
+            <td>To record voice memos</td>
+            <td>Only when you start a recording</td>
         </tr>
         <tr>
             <td><strong>Biometrics</strong></td>
-            <td>To unlock your hidden vault (optional)</td>
+            <td>To unlock your hidden vault</td>
+            <td>Only if you enable biometric unlock</td>
         </tr>
     </table>
     
-    <p>These permissions are used <strong>only</strong> for the stated purposes and <strong>only</strong> when you initiate the action.</p>
+    <p><strong>Important:</strong> All permissions are optional. You can deny any permission and still use the core note-taking features of the app.</p>
     
-    <h2>🚫 What We Don't Do</h2>
+    <h2 id="data-sharing">5. Data Sharing</h2>
+    
+    <h3>We Do Not Share Your Data</h3>
+    <p>Since we don't collect any data, there is nothing to share. Specifically:</p>
     <ul class="no-list">
-        <li>❌ We do <strong>not</strong> collect personal information</li>
-        <li>❌ We do <strong>not</strong> use analytics or tracking</li>
-        <li>❌ We do <strong>not</strong> display advertisements</li>
-        <li>❌ We do <strong>not</strong> sync data to any cloud</li>
-        <li>❌ We do <strong>not</strong> share data with third parties</li>
-        <li>❌ We do <strong>not</strong> access your contacts, location, or other apps</li>
+        <li>We do not sell your data to anyone</li>
+        <li>We do not share data with advertisers</li>
+        <li>We do not share data with analytics providers</li>
+        <li>We do not share data with any third parties</li>
+        <li>We do not use any third-party SDKs that collect data</li>
     </ul>
     
-    <h2>🔐 Hidden Vault</h2>
+    <h3>Third-Party Services</h3>
+    <p>Luma Notes does not integrate with any third-party services that would have access to your data. The app functions entirely independently.</p>
+    
+    <h3>User-Initiated Sharing</h3>
+    <p>You can choose to share your notes using Android's share feature. When you do this:</p>
     <ul>
-        <li>Your vault PIN is stored securely on your device using encryption</li>
-        <li>We cannot recover or reset your PIN if forgotten</li>
-        <li>Biometric data (fingerprint/face) is handled by your device's secure hardware - we never access it directly</li>
+        <li>You control exactly what is shared</li>
+        <li>You choose the destination app</li>
+        <li>We have no involvement in the sharing process</li>
     </ul>
     
-    <h2>💾 Backups</h2>
-    <ul>
-        <li>Backup files are created locally on your device</li>
-        <li>You control where backup files are saved and shared</li>
-        <li>We have no access to your backup files</li>
-    </ul>
+    <h2 id="data-security">6. Data Security</h2>
     
-    <h2>👶 Children's Privacy</h2>
-    <p>Luma Notes does not knowingly collect information from children under 13. The app stores all data locally and does not transmit any information.</p>
-    
-    <h2>🛡️ Data Security</h2>
-    <p>Your data is protected by:</p>
-    <ul>
-        <li>Your device's built-in security (screen lock, encryption)</li>
-        <li>Optional PIN protection for hidden notes</li>
-        <li>Optional biometric authentication</li>
-    </ul>
-    
-    <h2>📝 Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date at the top of this page.</p>
-    
-    <h2>📧 Contact Us</h2>
-    <div class="contact">
-        <p>If you have questions about this Privacy Policy, please contact us at:</p>
-        <p><strong>Email:</strong> lumanotes.app@gmail.com</p>
+    <h3>How Your Data is Protected</h3>
+    <div class="card">
+        <ul>
+            <li><strong>Android Security:</strong> Your data is protected by Android's built-in app sandboxing</li>
+            <li><strong>Device Encryption:</strong> If your device has encryption enabled, your notes are encrypted at rest</li>
+            <li><strong>Hidden Vault:</strong> Sensitive notes can be protected with an additional PIN</li>
+            <li><strong>Biometric Lock:</strong> Optional fingerprint or face authentication for the vault</li>
+            <li><strong>No Network Exposure:</strong> Since data never leaves your device, there's no risk of interception</li>
+        </ul>
     </div>
     
-    <h2>⚖️ Your Rights</h2>
-    <p>Since we don't collect any data, there is no personal data to access, modify, or delete from our systems. All your data is on your device and under your complete control.</p>
+    <h3>Vault PIN Security</h3>
+    <p>Your hidden vault PIN is:</p>
+    <ul>
+        <li>Stored locally in encrypted form</li>
+        <li>Never transmitted anywhere</li>
+        <li>Not recoverable by us if forgotten</li>
+    </ul>
+    
+    <h2 id="data-retention">7. Data Retention & Deletion</h2>
+    
+    <h3>How Long Data is Stored</h3>
+    <p>Your data remains on your device until:</p>
+    <ul>
+        <li>You manually delete individual notes</li>
+        <li>You empty the trash</li>
+        <li>You clear the app's data in device settings</li>
+        <li>You uninstall the app</li>
+    </ul>
+    
+    <h3>Deleting Your Data</h3>
+    <p>You have complete control over your data:</p>
+    <table>
+        <tr>
+            <th>Action</th>
+            <th>How to Do It</th>
+        </tr>
+        <tr>
+            <td>Delete a note</td>
+            <td>Swipe or use the delete option on any note</td>
+        </tr>
+        <tr>
+            <td>Permanently delete</td>
+            <td>Go to Trash and delete forever</td>
+        </tr>
+        <tr>
+            <td>Delete all data</td>
+            <td>Uninstall the app or clear app data in settings</td>
+        </tr>
+        <tr>
+            <td>Delete backups</td>
+            <td>Manually delete backup files from your device</td>
+        </tr>
+    </table>
+    
+    <h2 id="children">8. Children's Privacy</h2>
+    <p>Luma Notes does not knowingly collect any information from anyone, including children under the age of 13 (or applicable age in your jurisdiction).</p>
+    <p>Since all data is stored locally and never transmitted, the app is safe for users of all ages. However, the app is intended for general audiences and not specifically designed for children.</p>
+    <p>Parents should supervise their children's device usage as with any application.</p>
+    
+    <h2 id="your-rights">9. Your Rights</h2>
+    
+    <h3>Under GDPR (European Users)</h3>
+    <p>If you are in the European Economic Area (EEA), you have rights regarding your personal data. However, since Luma Notes does not collect or process any personal data:</p>
+    <ul>
+        <li><strong>Right to Access:</strong> All your data is already accessible to you on your device</li>
+        <li><strong>Right to Rectification:</strong> You can edit your notes anytime</li>
+        <li><strong>Right to Erasure:</strong> You can delete any or all data at any time</li>
+        <li><strong>Right to Portability:</strong> You can export/backup your data</li>
+        <li><strong>Right to Object:</strong> Not applicable as we don't process data</li>
+    </ul>
+    
+    <h3>Under CCPA (California Users)</h3>
+    <p>If you are a California resident, you have specific rights under the California Consumer Privacy Act. Since we don't collect personal information:</p>
+    <ul>
+        <li>We do not sell your personal information</li>
+        <li>We do not share your personal information for cross-context behavioral advertising</li>
+        <li>There is no personal information to disclose, delete, or correct on our end</li>
+    </ul>
+    
+    <h3>For All Users</h3>
+    <p>Regardless of your location, you have full control over your data because it exists only on your device.</p>
+    
+    <h2 id="international">10. International Users</h2>
+    <p>Luma Notes can be used anywhere in the world. Since no data is transmitted to us:</p>
+    <ul>
+        <li>There are no cross-border data transfers</li>
+        <li>Your data remains in your country on your device</li>
+        <li>No international data protection concerns apply</li>
+    </ul>
+    
+    <h2 id="changes">11. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do:</p>
+    <ul>
+        <li>We will update the "Last Updated" date at the top</li>
+        <li>For significant changes, we may provide notice in the app</li>
+        <li>Continued use of the app after changes constitutes acceptance</li>
+    </ul>
+    <p>We encourage you to review this Privacy Policy periodically.</p>
+    
+    <h2 id="contact">12. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our practices, please contact us:</p>
+    
+    <div class="contact-box">
+        <p>📧 <strong>Email:</strong></p>
+        <p><a href="mailto:lumanotes.app@gmail.com">lumanotes.app@gmail.com</a></p>
+        <br>
+        <p>We aim to respond to all inquiries within 48 hours.</p>
+    </div>
+    
+    <h2>13. Consent</h2>
+    <p>By using Luma Notes, you consent to this Privacy Policy. If you do not agree with this policy, please do not use the application.</p>
     
     <footer>
+        <p><strong>Luma Notes</strong></p>
+        <p>Your Private Notepad</p>
+        <br>
         <p>© 2025 Luma Notes. All rights reserved.</p>
-        <p>This privacy policy is effective as of the date listed above.</p>
+        <p>This privacy policy is compliant with Google Play Store requirements, GDPR, and CCPA.</p>
     </footer>
 </body>
 </html>
