@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Privacy Policy - Luma Notes</title>
     <meta name="description" content="Privacy Policy for Luma Notes - A private, offline notes app">
-    <meta name="theme-color" content="#0f0f0f">
+    <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     
     <!-- Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,10 +16,9 @@
     
     <style>
         /* ========================================
-           CSS Variables - Easy to Customize
+           CSS Variables - Light Mode Only
         ======================================== */
         :root {
-            /* Light Theme */
             --bg-primary: #ffffff;
             --bg-secondary: #f8f9fa;
             --bg-card: #ffffff;
@@ -34,23 +33,6 @@
             --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.08);
             --success: #10b981;
             --error: #ef4444;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-primary: #0f0f0f;
-                --bg-secondary: #1a1a1a;
-                --bg-card: #1f1f1f;
-                --text-primary: #f5f5f5;
-                --text-secondary: #a0aec0;
-                --text-muted: #718096;
-                --accent: #a78bfa;
-                --accent-light: #c4b5fd;
-                --accent-bg: rgba(167, 139, 250, 0.1);
-                --border: #2d2d2d;
-                --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-                --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.4);
-            }
         }
 
         /* ========================================
@@ -102,17 +84,11 @@
             border-bottom: 1px solid var(--border);
             padding: 32px 0;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         @media (min-width: 768px) {
             header {
                 padding: 48px 0;
-                position: relative;
             }
         }
 
@@ -356,7 +332,7 @@
         }
 
         /* ========================================
-           Permission Table
+           Permission Grid
         ======================================== */
         .permission-grid {
             display: flex;
@@ -582,7 +558,7 @@
         }
 
         /* ========================================
-           Accordion (Mobile Friendly)
+           Accordion
         ======================================== */
         .accordion {
             border: 1px solid var(--border);
