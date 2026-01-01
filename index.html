@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Privacy Policy - Luma Notes</title>
     <meta name="description" content="Privacy Policy for Luma Notes - A private, offline notes app">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#F6F5FA">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     
@@ -16,23 +16,49 @@
     
     <style>
         /* ========================================
-           CSS Variables - Light Mode Only
+           Luma Notes Brand Colors
         ======================================== */
         :root {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --bg-card: #ffffff;
-            --text-primary: #1a1a1a;
-            --text-secondary: #4a5568;
-            --text-muted: #718096;
-            --accent: #7c3aed;
-            --accent-light: #a78bfa;
-            --accent-bg: rgba(124, 58, 237, 0.08);
-            --border: #e2e8f0;
-            --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --success: #10b981;
-            --error: #ef4444;
+            /* Backgrounds */
+            --bg-primary: #F6F5FA;
+            --bg-surface: #FFFFFF;
+            --bg-elevated: #FDFBFF;
+            
+            /* Brand Colors */
+            --primary: #FFC857;
+            --primary-dark: #E5B34E;
+            --accent: #6C63FF;
+            --accent-light: #8E8DFF;
+            --accent-bg: rgba(108, 99, 255, 0.08);
+            
+            /* Text */
+            --text-primary: #15141A;
+            --text-secondary: #6B6B80;
+            --text-muted: #9090A0;
+            
+            /* Borders & Dividers */
+            --border: #E2E0F0;
+            --divider: #E2E0F0;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(21, 20, 26, 0.04);
+            --shadow: 0 2px 8px rgba(21, 20, 26, 0.06);
+            --shadow-lg: 0 8px 24px rgba(21, 20, 26, 0.08);
+            --shadow-primary: 0 8px 24px rgba(255, 200, 87, 0.35);
+            --shadow-accent: 0 8px 24px rgba(108, 99, 255, 0.25);
+            
+            /* Status Colors */
+            --success: #4CAF50;
+            --danger: #FF4D57;
+            --warning: #FF9800;
+            
+            /* Note Colors */
+            --note-rose: #FFE4E6;
+            --note-peach: #FED7AA;
+            --note-lemon: #FEF08A;
+            --note-mint: #BBF7D0;
+            --note-sky: #BAE6FD;
+            --note-lavender: #DDD6FE;
         }
 
         /* ========================================
@@ -80,15 +106,15 @@
            Header
         ======================================== */
         header {
-            background: var(--bg-secondary);
+            background: var(--bg-surface);
             border-bottom: 1px solid var(--border);
-            padding: 32px 0;
+            padding: 28px 0;
             text-align: center;
         }
 
         @media (min-width: 768px) {
             header {
-                padding: 48px 0;
+                padding: 40px 0;
             }
         }
 
@@ -96,37 +122,39 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .logo-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            border-radius: 14px;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            box-shadow: var(--shadow-lg);
+            font-size: 26px;
+            box-shadow: var(--shadow-primary);
         }
 
         .logo-text {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             color: var(--text-primary);
+            letter-spacing: -0.5px;
         }
 
         header h1 {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 8px;
+            letter-spacing: -0.3px;
         }
 
         @media (min-width: 768px) {
             header h1 {
-                font-size: 36px;
+                font-size: 32px;
             }
         }
 
@@ -137,69 +165,99 @@
 
         .last-updated strong {
             color: var(--text-secondary);
+            font-weight: 600;
         }
 
         /* ========================================
            Main Content
         ======================================== */
         main {
-            padding: 32px 0 64px;
+            padding: 28px 0 60px;
         }
 
         @media (min-width: 768px) {
             main {
-                padding: 48px 0 80px;
+                padding: 40px 0 80px;
             }
         }
 
         /* ========================================
-           Summary Card - Hero
+           Hero Summary Card
         ======================================== */
-        .summary-card {
-            background: linear-gradient(135deg, var(--accent), #6d28d9);
-            border-radius: 20px;
-            padding: 28px 24px;
-            margin-bottom: 40px;
+        .hero-card {
+            background: linear-gradient(145deg, var(--accent), #5B54E0);
+            border-radius: 24px;
+            padding: 32px 24px;
+            margin-bottom: 36px;
             color: white;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(124, 58, 237, 0.25);
+            box-shadow: var(--shadow-accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+
+        .hero-card::after {
+            content: "";
+            position: absolute;
+            bottom: -30%;
+            left: -20%;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
         }
 
         @media (min-width: 768px) {
-            .summary-card {
-                padding: 40px 48px;
-                border-radius: 24px;
+            .hero-card {
+                padding: 44px 40px;
             }
         }
 
-        .summary-card .icon {
-            font-size: 48px;
+        .hero-card .icon {
+            font-size: 52px;
             margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
         }
 
-        .summary-card h2 {
-            font-size: 20px;
-            font-weight: 600;
+        .hero-card h2 {
+            font-size: 22px;
+            font-weight: 700;
             margin-bottom: 12px;
             border: none;
             padding: 0;
+            position: relative;
+            z-index: 1;
         }
 
         @media (min-width: 768px) {
-            .summary-card h2 {
-                font-size: 24px;
+            .hero-card h2 {
+                font-size: 26px;
             }
         }
 
-        .summary-card p {
+        .hero-card p {
             font-size: 15px;
             opacity: 0.95;
-            line-height: 1.6;
+            line-height: 1.65;
             margin: 0;
+            position: relative;
+            z-index: 1;
         }
 
         @media (min-width: 768px) {
-            .summary-card p {
+            .hero-card p {
                 font-size: 17px;
             }
         }
@@ -208,69 +266,99 @@
            Section Styles
         ======================================== */
         section {
-            margin-bottom: 40px;
+            margin-bottom: 36px;
+        }
+
+        .section-card {
+            background: var(--bg-surface);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        @media (min-width: 768px) {
+            .section-card {
+                padding: 28px;
+            }
         }
 
         h2 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--border);
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 10px;
+            letter-spacing: -0.2px;
         }
 
         @media (min-width: 768px) {
             h2 {
-                font-size: 22px;
+                font-size: 20px;
             }
         }
 
-        h2 .section-icon {
-            font-size: 22px;
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-bg);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
         }
 
         h3 {
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 600;
             color: var(--text-primary);
-            margin: 24px 0 12px;
+            margin: 20px 0 10px;
         }
 
         p {
             color: var(--text-secondary);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             font-size: 15px;
         }
 
         @media (min-width: 768px) {
             p {
-                font-size: 16px;
+                font-size: 15.5px;
             }
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
         }
 
         /* ========================================
            Lists
         ======================================== */
-        ul, ol {
-            margin: 0 0 20px 0;
+        ul {
+            margin: 0;
             padding-left: 0;
             list-style: none;
         }
 
         li {
             position: relative;
-            padding: 10px 0 10px 32px;
+            padding: 12px 0 12px 28px;
             color: var(--text-secondary);
             font-size: 15px;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--divider);
         }
 
         li:last-child {
             border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        li:first-child {
+            padding-top: 0;
         }
 
         li::before {
@@ -285,6 +373,16 @@
             border-radius: 50%;
         }
 
+        li:first-child::before {
+            top: 16px;
+            transform: none;
+        }
+
+        li:last-child::before {
+            top: 12px;
+            transform: none;
+        }
+
         /* Special Lists */
         .list-yes li::before {
             content: "✓";
@@ -294,74 +392,65 @@
             font-size: 14px;
             width: auto;
             height: auto;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .list-yes li:first-child::before,
+        .list-yes li:last-child::before {
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .list-no li::before {
             content: "✕";
             background: none;
-            color: var(--error);
+            color: var(--danger);
             font-weight: 700;
             font-size: 14px;
             width: auto;
             height: auto;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .list-no li:first-child::before,
+        .list-no li:last-child::before {
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         /* ========================================
-           Cards
-        ======================================== */
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: var(--shadow);
-        }
-
-        @media (min-width: 768px) {
-            .card {
-                padding: 24px;
-            }
-        }
-
-        .card h3 {
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* ========================================
-           Permission Grid
+           Permission Cards
         ======================================== */
         .permission-grid {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin: 20px 0;
+            margin-top: 16px;
         }
 
         .permission-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
+            background: var(--bg-primary);
+            border-radius: 14px;
             padding: 16px;
             display: flex;
-            gap: 16px;
+            gap: 14px;
             align-items: flex-start;
-            box-shadow: var(--shadow);
         }
 
         .permission-icon {
             width: 44px;
             height: 44px;
-            background: var(--accent-bg);
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 20px;
             flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
         }
 
         .permission-content {
@@ -379,6 +468,32 @@
             font-size: 14px;
             color: var(--text-muted);
             margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           Highlight Box
+        ======================================== */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--note-lemon), var(--note-peach));
+            border-radius: 14px;
+            padding: 16px 18px;
+            margin-top: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .highlight-box .highlight-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 14px;
+            line-height: 1.55;
         }
 
         /* ========================================
@@ -387,184 +502,41 @@
         .data-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin-top: 16px;
             font-size: 14px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
         }
 
         .data-table th,
         .data-table td {
             padding: 14px 16px;
             text-align: left;
-            border-bottom: 1px solid var(--border);
         }
 
         .data-table th {
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             font-weight: 600;
             color: var(--text-primary);
             font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
         .data-table td {
             color: var(--text-secondary);
-        }
-
-        .data-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* ========================================
-           Highlight Box
-        ======================================== */
-        .highlight-box {
-            background: var(--accent-bg);
-            border-left: 4px solid var(--accent);
-            border-radius: 0 12px 12px 0;
-            padding: 16px 20px;
-            margin: 20px 0;
-        }
-
-        .highlight-box p {
-            margin: 0;
-            color: var(--text-primary);
-            font-size: 14px;
-        }
-
-        .highlight-box strong {
-            color: var(--accent);
-        }
-
-        /* ========================================
-           Contact Section
-        ======================================== */
-        .contact-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 32px 24px;
-            text-align: center;
-            margin: 32px 0;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .contact-card .contact-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--accent-bg);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            margin: 0 auto 20px;
-        }
-
-        .contact-card h3 {
-            margin: 0 0 8px;
-            font-size: 18px;
-        }
-
-        .contact-card p {
-            margin-bottom: 20px;
-        }
-
-        .contact-email {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--accent);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 100px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .contact-email:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
-        }
-
-        .contact-email:active {
-            transform: translateY(0);
-        }
-
-        .response-time {
-            margin-top: 16px;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* ========================================
-           Footer
-        ======================================== */
-        footer {
-            background: var(--bg-secondary);
             border-top: 1px solid var(--border);
-            padding: 32px 0;
-            text-align: center;
-        }
-
-        .footer-logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-
-        .footer-logo-icon {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-        }
-
-        .footer-logo-text {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        footer p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-
-        .footer-links {
-            margin-top: 16px;
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 13px;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
         }
 
         /* ========================================
            Accordion
         ======================================== */
         .accordion {
-            border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
-            margin: 20px 0;
+            margin-top: 16px;
+            background: var(--bg-primary);
         }
 
         .accordion-item {
@@ -577,8 +549,8 @@
 
         .accordion-header {
             width: 100%;
-            padding: 18px 20px;
-            background: var(--bg-card);
+            padding: 16px 18px;
+            background: transparent;
             border: none;
             text-align: left;
             font-size: 15px;
@@ -593,13 +565,14 @@
         }
 
         .accordion-header:hover {
-            background: var(--bg-secondary);
+            background: var(--bg-surface);
         }
 
         .accordion-header::after {
             content: "+";
             font-size: 20px;
-            color: var(--text-muted);
+            color: var(--accent);
+            font-weight: 500;
             transition: transform 0.3s;
         }
 
@@ -611,7 +584,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
-            background: var(--bg-primary);
+            background: var(--bg-surface);
         }
 
         .accordion-item.active .accordion-content {
@@ -619,15 +592,163 @@
         }
 
         .accordion-body {
-            padding: 20px;
+            padding: 16px 18px;
+            border-top: 1px solid var(--border);
         }
 
         .accordion-body p {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            font-size: 14px;
         }
 
         .accordion-body p:last-child {
             margin-bottom: 0;
+        }
+
+        /* ========================================
+           Security Card
+        ======================================== */
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 400px) {
+            .security-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .security-item {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .security-item .security-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .security-item .security-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* ========================================
+           Contact Section
+        ======================================== */
+        .contact-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-card .contact-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+            box-shadow: var(--shadow-primary);
+        }
+
+        .contact-card h3 {
+            margin: 0 0 8px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .contact-card > p {
+            margin-bottom: 24px;
+            color: var(--text-muted);
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: var(--shadow-accent);
+        }
+
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(108, 99, 255, 0.35);
+        }
+
+        .contact-email:active {
+            transform: translateY(0);
+        }
+
+        .response-time {
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* ========================================
+           Footer
+        ======================================== */
+        footer {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .footer-logo-text {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 18px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        footer .tagline {
+            color: var(--text-secondary);
+            font-weight: 500;
         }
 
         /* ========================================
@@ -637,18 +758,18 @@
             position: fixed;
             bottom: 24px;
             right: 24px;
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             background: var(--accent);
             color: white;
             border: none;
             border-radius: 50%;
-            font-size: 20px;
+            font-size: 22px;
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-accent);
             z-index: 1000;
         }
 
@@ -659,6 +780,7 @@
 
         .back-to-top:hover {
             transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(108, 99, 255, 0.4);
         }
 
         .back-to-top:active {
@@ -668,10 +790,10 @@
         /* ========================================
            Animations
         ======================================== */
-        @keyframes fadeIn {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(16px);
             }
             to {
                 opacity: 1;
@@ -680,7 +802,11 @@
         }
 
         section {
-            animation: fadeIn 0.5s ease-out;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .hero-card {
+            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
@@ -701,171 +827,222 @@
     <main>
         <div class="container">
             
-            <!-- Summary Card -->
-            <div class="summary-card">
+            <!-- Hero Card -->
+            <div class="hero-card">
                 <div class="icon">🛡️</div>
                 <h2>Your Privacy is Protected</h2>
-                <p>Luma Notes does not collect, store, or transmit any of your personal data. All your notes and files remain 100% on your device. We have zero access to your information.</p>
+                <p>Luma Notes does not collect, store, or transmit any of your personal data. All your notes and files remain 100% on your device.</p>
             </div>
 
             <!-- Introduction -->
             <section>
-                <h2><span class="section-icon">👋</span> Introduction</h2>
-                <p>Welcome to Luma Notes. We are committed to protecting your privacy and being transparent about our practices.</p>
-                <p>This Privacy Policy explains how Luma Notes handles information when you use our mobile application. By using Luma Notes, you agree to the practices described in this Privacy Policy.</p>
+                <div class="section-card">
+                    <h2>
+                        <span class="section-icon">👋</span>
+                        Introduction
+                    </h2>
+                    <p>Welcome to Luma Notes. We are committed to protecting your privacy and being transparent about our practices.</p>
+                    <p style="margin-bottom: 0;">This Privacy Policy explains how Luma Notes handles information when you use our mobile application. By using Luma Notes, you agree to the practices described here.</p>
+                </div>
             </section>
 
             <!-- What We Don't Collect -->
             <section>
-                <h2><span class="section-icon">🚫</span> What We Don't Collect</h2>
-                <p>Luma Notes is designed as a fully offline, privacy-first application. We do not collect:</p>
-                <ul class="list-no">
-                    <li>Personal information (name, email, phone)</li>
-                    <li>Device identifiers or advertising IDs</li>
-                    <li>Location data</li>
-                    <li>Usage analytics or statistics</li>
-                    <li>Crash reports or diagnostics</li>
-                    <li>Any content you create in the app</li>
-                </ul>
+                <div class="section-card">
+                    <h2>
+                        <span class="section-icon">🚫</span>
+                        What We Don't Collect
+                    </h2>
+                    <p>Luma Notes is a fully offline, privacy-first application:</p>
+                    <ul class="list-no">
+                        <li>Personal information (name, email, phone)</li>
+                        <li>Device identifiers or advertising IDs</li>
+                        <li>Location data</li>
+                        <li>Usage analytics or statistics</li>
+                        <li>Crash reports or diagnostics</li>
+                        <li>Any content you create in the app</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- What's Stored Locally -->
             <section>
-                <h2><span class="section-icon">📱</span> What's Stored on Your Device</h2>
-                <p>The following data is stored <strong>only on your device</strong> and is never transmitted:</p>
-                <ul class="list-yes">
-                    <li>Notes you create (text, formatting, styles)</li>
-                    <li>Images you attach to notes</li>
-                    <li>Audio recordings you make</li>
-                    <li>Folders and organizational structure</li>
-                    <li>App preferences and settings</li>
-                    <li>Hidden vault PIN (stored encrypted)</li>
-                </ul>
+                <div class="section-card">
+                    <h2>
+                        <span class="section-icon">📱</span>
+                        Stored on Your Device
+                    </h2>
+                    <p>The following is stored <strong>only on your device</strong> and never transmitted:</p>
+                    <ul class="list-yes">
+                        <li>Notes you create (text, formatting, styles)</li>
+                        <li>Images you attach to notes</li>
+                        <li>Audio recordings you make</li>
+                        <li>Folders and organizational structure</li>
+                        <li>App preferences and settings</li>
+                        <li>Hidden vault PIN (stored encrypted)</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- Permissions -->
             <section>
-                <h2><span class="section-icon">🔐</span> App Permissions</h2>
-                <p>Luma Notes requests only the minimum permissions necessary:</p>
-                
-                <div class="permission-grid">
-                    <div class="permission-item">
-                        <div class="permission-icon">📷</div>
-                        <div class="permission-content">
-                            <div class="permission-title">Camera & Storage</div>
-                            <p class="permission-desc">To attach photos to your notes. Used only when you choose to add an image.</p>
+                <div class="section-card">
+                    <h2>
+                        <span class="section-icon">🔐</span>
+                        App Permissions
+                    </h2>
+                    <p>We request only minimum permissions necessary:</p>
+                    
+                    <div class="permission-grid">
+                        <div class="permission-item">
+                            <div class="permission-icon">📷</div>
+                            <div class="permission-content">
+                                <div class="permission-title">Camera & Storage</div>
+                                <p class="permission-desc">To attach photos to notes. Used only when you add an image.</p>
+                            </div>
+                        </div>
+                        <div class="permission-item">
+                            <div class="permission-icon">🎙️</div>
+                            <div class="permission-content">
+                                <div class="permission-title">Microphone</div>
+                                <p class="permission-desc">To record voice memos. Used only when you start recording.</p>
+                            </div>
+                        </div>
+                        <div class="permission-item">
+                            <div class="permission-icon">👆</div>
+                            <div class="permission-content">
+                                <div class="permission-title">Biometrics</div>
+                                <p class="permission-desc">To unlock your hidden vault. Optional feature.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="permission-item">
-                        <div class="permission-icon">🎙️</div>
-                        <div class="permission-content">
-                            <div class="permission-title">Microphone</div>
-                            <p class="permission-desc">To record voice memos. Used only when you start a recording.</p>
-                        </div>
-                    </div>
-                    <div class="permission-item">
-                        <div class="permission-icon">👆</div>
-                        <div class="permission-content">
-                            <div class="permission-title">Biometrics</div>
-                            <p class="permission-desc">To unlock your hidden vault. Optional feature you can enable.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="highlight-box">
-                    <p><strong>Note:</strong> All permissions are optional. You can deny any permission and still use the core note-taking features.</p>
+                    <div class="highlight-box">
+                        <span class="highlight-icon">💡</span>
+                        <p><strong>Note:</strong> All permissions are optional. You can deny any permission and still use core note-taking features.</p>
+                    </div>
                 </div>
             </section>
 
             <!-- Data Sharing -->
             <section>
-                <h2><span class="section-icon">🔒</span> Data Sharing</h2>
-                <p>Since we don't collect any data, there is nothing to share:</p>
-                <ul class="list-no">
-                    <li>We do not sell your data</li>
-                    <li>We do not share with advertisers</li>
-                    <li>We do not share with analytics providers</li>
-                    <li>We do not use third-party SDKs that collect data</li>
-                </ul>
+                <div class="section-card">
+                    <h2>
+                        <span class="section-icon">🔒</span>
+                        Data Sharing
+                    </h2>
+                    <p>Since we don't collect any data, there is nothing to share:</p>
+                    <ul class="list-no">
+                        <li>We do not sell your data</li>
+                        <li>We do not share with advertisers</li>
+                        <li>We do not share with analytics providers</li>
+                        <li>We do not use third-party SDKs that collect data</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- Data Security -->
             <section>
-                <h2><span class="section-icon">🛡️</span> Data Security</h2>
-                <div class="card">
-                    <h3>🔐 How Your Data is Protected</h3>
-                    <ul>
-                        <li>Android's built-in app sandboxing</li>
-                        <li>Device encryption (if enabled on your device)</li>
-                        <li>Optional PIN protection for hidden notes</li>
-                        <li>Optional biometric authentication</li>
-                        <li>No network exposure since data never leaves your device</li>
-                    </ul>
+                <div class="section-card">
+                    <h2>
+                        <span class="section-icon">🛡️</span>
+                        Data Security
+                    </h2>
+                    <p>Your data is protected by multiple layers:</p>
+                    
+                    <div class="security-grid">
+                        <div class="security-item">
+                            <div class="security-icon">🔒</div>
+                            <div class="security-label">Android Sandboxing</div>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-icon">🔐</div>
+                            <div class="security-label">Device Encryption</div>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-icon">🔢</div>
+                            <div class="security-label">Vault PIN Lock</div>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-icon">👆</div>
+                            <div class="security-label">Biometric Auth</div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Data Deletion -->
             <section>
-                <h2><span class="section-icon">🗑️</span> Data Retention & Deletion</h2>
-                <p>You have complete control over your data:</p>
-                
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Action</th>
-                            <th>How to Do It</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Delete a note</td>
-                            <td>Swipe or tap delete on any note</td>
-                        </tr>
-                        <tr>
-                            <td>Permanently delete</td>
-                            <td>Go to Trash → Delete forever</td>
-                        </tr>
-                        <tr>
-                            <td>Delete all data</td>
-                            <td>Uninstall the app</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="section-card">
+                    <h2>
+                        <span class="section-icon">🗑️</span>
+                        Data Retention & Deletion
+                    </h2>
+                    <p>You have complete control over your data:</p>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>How</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Delete a note</td>
+                                <td>Swipe or tap delete</td>
+                            </tr>
+                            <tr>
+                                <td>Permanent delete</td>
+                                <td>Trash → Delete forever</td>
+                            </tr>
+                            <tr>
+                                <td>Delete all data</td>
+                                <td>Uninstall the app</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
-            <!-- Your Rights - Accordion -->
+            <!-- Your Rights -->
             <section>
-                <h2><span class="section-icon">⚖️</span> Your Rights</h2>
-                
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-header">GDPR (European Users)</button>
-                        <div class="accordion-content">
-                            <div class="accordion-body">
-                                <p>Since Luma Notes does not collect or process any personal data, GDPR rights are inherently satisfied:</p>
-                                <p><strong>Right to Access:</strong> All your data is accessible on your device.</p>
-                                <p><strong>Right to Erasure:</strong> You can delete any data at any time.</p>
-                                <p><strong>Right to Portability:</strong> You can export/backup your data.</p>
+                <div class="section-card">
+                    <h2>
+                        <span class="section-icon">⚖️</span>
+                        Your Rights
+                    </h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">GDPR (European Users)</button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>Since we don't collect personal data, GDPR rights are inherently satisfied:</p>
+                                    <p><strong>Right to Access:</strong> All data is on your device.</p>
+                                    <p><strong>Right to Erasure:</strong> Delete anytime.</p>
+                                    <p><strong>Right to Portability:</strong> Export via backup.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">CCPA (California Users)</button>
-                        <div class="accordion-content">
-                            <div class="accordion-body">
-                                <p>Under the California Consumer Privacy Act:</p>
-                                <p>We do not sell your personal information.</p>
-                                <p>We do not share your information for advertising.</p>
-                                <p>There is no personal information collected to disclose or delete.</p>
+                        <div class="accordion-item">
+                            <button class="accordion-header">CCPA (California Users)</button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>Under the California Consumer Privacy Act:</p>
+                                    <p>We do not sell your personal information.</p>
+                                    <p>We do not share for advertising purposes.</p>
+                                    <p>No personal data is collected to disclose or delete.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">Children's Privacy</button>
-                        <div class="accordion-content">
-                            <div class="accordion-body">
-                                <p>Luma Notes does not knowingly collect information from children under 13.</p>
-                                <p>Since all data is stored locally and never transmitted, the app is safe for users of all ages.</p>
+                        <div class="accordion-item">
+                            <button class="accordion-header">Children's Privacy</button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>Luma Notes does not collect information from anyone, including children under 13.</p>
+                                    <p>Since all data is stored locally, the app is safe for users of all ages.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -874,14 +1051,18 @@
 
             <!-- Changes -->
             <section>
-                <h2><span class="section-icon">📝</span> Changes to This Policy</h2>
-                <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top of this page.</p>
-                <p>Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+                <div class="section-card">
+                    <h2>
+                        <span class="section-icon">📝</span>
+                        Policy Changes
+                    </h2>
+                    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top.</p>
+                    <p style="margin-bottom: 0;">Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+                </div>
             </section>
 
             <!-- Contact -->
             <section>
-                <h2><span class="section-icon">📧</span> Contact Us</h2>
                 <div class="contact-card">
                     <div class="contact-icon">💬</div>
                     <h3>Have Questions?</h3>
@@ -895,8 +1076,13 @@
 
             <!-- Consent -->
             <section>
-                <h2><span class="section-icon">✅</span> Consent</h2>
-                <p>By using Luma Notes, you consent to this Privacy Policy. If you do not agree with this policy, please do not use the application.</p>
+                <div class="section-card">
+                    <h2>
+                        <span class="section-icon">✅</span>
+                        Consent
+                    </h2>
+                    <p style="margin-bottom: 0;">By using Luma Notes, you consent to this Privacy Policy. If you do not agree, please do not use the application.</p>
+                </div>
             </section>
 
         </div>
@@ -909,11 +1095,8 @@
                 <div class="footer-logo-icon">📝</div>
                 <span class="footer-logo-text">Luma Notes</span>
             </div>
-            <p>Your Private Notepad</p>
+            <p class="tagline">Your Private Notepad</p>
             <p>© 2025 Luma Notes. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#top">Back to Top</a>
-            </div>
         </div>
     </footer>
 
@@ -928,12 +1111,10 @@
                 const item = button.parentElement;
                 const isActive = item.classList.contains('active');
                 
-                // Close all items
                 document.querySelectorAll('.accordion-item').forEach(i => {
                     i.classList.remove('active');
                 });
                 
-                // Open clicked item if it wasn't active
                 if (!isActive) {
                     item.classList.add('active');
                 }
